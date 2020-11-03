@@ -27,10 +27,52 @@ for i in main_body.find_all('a', href=re.compile('contentassets')):
     dwn_2.append(i['href'])
 
 
-def lataa(link):
-
+def load(link):
     latauslinkki = 'https://www.vero.fi'+link
+    print(latauslinkki)
 
-    return print(latauslinkki)
 
-lataa(dwn_1[0])
+
+sana = ('')
+x = input('Vuosimalli:')
+
+for i in (dwn_1[3]):
+    sana = sana+i
+    if x in sana:
+        load(dwn_1[3])
+        break
+    else:
+        continue
+
+index = 0
+
+for solu in dwn_1:
+    for i in (dwn_1[index]):
+        sana = sana + i
+        if x in sana[index:]:
+            load(dwn_1[index])
+            break
+        else:
+            continue
+    index = index + 1
+else:
+    index = index + 1
+
+print(sana)
+
+
+print(dwn_1[3])
+
+sd = '2014'
+sana1 = ''
+
+for i in dwn_1[3]:
+    if i in sd:
+        sana1 = sana1 + i
+        if sana == sd:
+            break
+        else:
+            continue
+
+
+print('Täs se on :', sana1)
